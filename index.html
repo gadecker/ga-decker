@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--Gage Decker-->
+<html>
+<head>
+	<title>Scary Game</title>
+	<style>
+		a {color:orange}
+		h1 {font-family: Arial, sans-serif;}
+		h2 {font-family: Times, serif;}
+	
+	</style>
+	
+</head>
+<body style="background-color: #556772">
+	<div id="challengehead" style="font-family: Arial, sans-serif;"><h1>Don't Be Spooked!</h1><hr><div>
+	<div id="randquestion"></div>
+	<div id="image"><img src="OIP.jfif" usemap="#image-map"><div>
+	<div id="randimap"><div>
+
+	<script>
+		//Declare questions
+		let q1 = "<h2>Click on the the door that looks the least scary.</h2>"
+		let q2 = "<h2>Click on the door that you think will save you.</h2>"
+		let q3 = "<h2>QUICK! Choose a door... He's close.</h2>"
+
+		let map1 = "<map name='image-map'><area target='' alt='SCARY' title='SCARY' href='c.html' coords='56,19,135,179' shape='rect'><area target='' alt='SCARY' title='SCARY' href='c.html' coords='334,16,422,177' shape='rect'><area target='' alt='SCARY' title='SCARY' href='i.html' coords='198,17,282,178' shape='rect'></map>";
+		
+		let map2 = "<map name='image-map'><area target='' alt='SCARY' title='SCARY' href='c.html' coords='198,17,282,178' shape='rect'><area target='' alt='SCARY' title='SCARY' href='i.html' coords='56,19,135,179' shape='rect'><area target='' alt='SCARY' title='SCARY' href='c.html' coords='334,16,422,177' shape='rect'></map>";
+		
+		let map3 = "<map name='image-map'><area target='' alt='SCARY' title='SCARY' href='i.html' coords='334,16,422,177' shape='rect'><area target='' alt='SCARY' title='SCARY' href='c.html' coords='198,17,282,178' shape='rect'><area target='' alt='SCARY' title='SCARY' href='c.html' coords='56,19,135,179' shape='rect'></map>";
+		
+		
+		//Generate Random Number 1-3
+		let randq = Math.floor(Math.random()*10)%3+1;
+		
+		console.log(randq);
+		//Change Question and Image Map based on random number (using an array would have eliminated if/else if statements)
+		if (randq == 1){
+			document.getElementById('randquestion').innerHTML = q1;
+			document.getElementById('randimap').innerHTML = map1;
+		} else if (randq == 2) {
+			document.getElementById('randquestion').innerHTML = q2;	
+			document.getElementById('randimap').innerHTML = map2;			
+		} else if (randq == 3) {
+			document.getElementById('randquestion').innerHTML = q3;
+			document.getElementById('randimap').innerHTML = map3;			
+		}
+	
+	</script>
+
+	
+</body>
+</html>
